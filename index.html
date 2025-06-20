@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Cryptographic Malware Detection</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #f0f4f8;
+      color: #333;
+      margin: 0;
+      padding: 0;
+    }
+
+    .container {
+      max-width: 900px;
+      margin: 0 auto;
+      padding: 30px;
+      background-color: #ffffff;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+      border-radius: 10px;
+      text-align: center;
+    }
+
+    .logo {
+      width: 120px;
+      margin: 20px auto;
+    }
+
+    h1 {
+      color: #2c3e50;
+      margin-bottom: 10px;
+    }
+
+    .section {
+      margin: 40px 0;
+    }
+
+    .button {
+      display: inline-block;
+      padding: 12px 20px;
+      margin: 10px;
+      font-size: 16px;
+      color: white;
+      background-color: #007bff;
+      border-radius: 6px;
+      text-decoration: none;
+      transition: background-color 0.3s ease;
+    }
+
+    .button:hover {
+      background-color: #0056b3;
+    }
+
+    input[type="text"] {
+      padding: 10px;
+      width: 250px;
+      border-radius: 4px;
+      border: 1px solid #ccc;
+      margin-right: 10px;
+    }
+
+    footer {
+      text-align: center;
+      padding: 20px;
+      background-color: #2c3e50;
+      color: white;
+      margin-top: 50px;
+      border-radius: 0 0 10px 10px;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="container">
+    <!-- Logo -->
+    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/a/ab/Logo_TV_2015.svg/1200px-Logo_TV_2015.svg.png" alt="Logo" class="logo" />
+
+    <h1>Cryptographic Malware Detection</h1>
+    <p>Explore and test a machine learning system that identifies malware using cryptographic patterns.</p>
+
+    <!-- Section: Notebook Links -->
+    <div class="section">
+      <h2>🔗 Notebooks</h2>
+      <a class="button" href="https://colab.research.google.com/gist/atharvaganesh12/29a4843d62714a2abd04bd08e3ac1877/crypto_malware_detect.ipynb" target="_blank">
+        🧪 Full Pipeline
+      </a>
+      <a class="button" href="https://colab.research.google.com/" target="_blank">
+        📊 EDA Notebook
+      </a>
+      <a class="button" href="https://colab.research.google.com/" target="_blank">
+        🤖 Model Evaluation
+      </a>
+    </div>
+
+    <!-- Section: Malware or Not -->
+    <div class="section">
+      <h2>🧠 Malware or Not?</h2>
+      <p>Enter a sample filename (for simulation only):</p>
+      <input type="text" id="filename" placeholder="e.g., myfile.exe" />
+      <button class="button" onclick="predictMalware()">Check</button>
+      <p id="result" style="font-weight: bold; font-size: 18px; margin-top: 15px;"></p>
+    </div>
+  </div>
+
+  <!-- Footer -->
+  <footer>
+    &copy; 2025 Cryptographic Malware Detection | Built with ❤ by Atharva Ganesh
+  </footer>
+
+  <script>
+    function predictMalware() {
+      const name = document.getElementById('filename').value.toLowerCase();
+      const result = document.getElementById('result');
+
+      if (name.includes("ransom") || name.includes("crypto") || name.includes("virus")) {
+        result.innerHTML = "⚠ Malware Detected!";
+        result.style.color = "red";
+      } else if (name.trim() === "") {
+        result.innerHTML = "Please enter a valid filename.";
+        result.style.color = "orange";
+      } else {
+        result.innerHTML = "✅ Benign File.";
+        result.style.color = "green";
+      }
+    }
+  </script>
+
+</body>
+</html>
